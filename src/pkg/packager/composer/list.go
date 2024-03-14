@@ -202,7 +202,7 @@ func NewImportChain(head types.ZarfComponent, index int, originalPackageName, ar
 		}
 
 		if len(found) == 0 {
-			componentNotFound := "component %q not found in %q"
+			componentNotFound := "Component %q not found in %q satisfying %q. It's possible a component exists but it is not compatible with the selected architecture or flavor."
 			if isLocal {
 				return ic, fmt.Errorf(componentNotFound, name, relativeToHead)
 			} else if isRemote {
